@@ -1,1 +1,1 @@
-export const FOO = "header/FOO";
+export const FOO = "header_foo";
