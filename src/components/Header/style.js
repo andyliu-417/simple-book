@@ -1,13 +1,13 @@
 import styled from "styled-components";
 import logoPic from "../../statics/logo.png";
 
-const HeaderWrapper = styled.div`
+export const HeaderWrapper = styled.div`
   height: 56px;
   border-bottom: 1px solid #f0f0f0;
   position: relative;
 `;
 
-const Logo = styled.a`
+export const Logo = styled.a`
   position: absolute;
   top: 0;
   left: 0;
@@ -18,13 +18,13 @@ const Logo = styled.a`
   background-size: contain;
 `;
 
-const Nav = styled.div`
+export const Nav = styled.div`
   width: 70%;
   height: 100%;
   margin: 0 auto;
 `;
 
-const NavItem = styled.div`
+export const NavItem = styled.div`
   height: 56px;
   line-height: 56px;
   padding: 0 15px;
@@ -41,7 +41,7 @@ const NavItem = styled.div`
   }
 `;
 
-const NavSearch = styled.input.attrs({ placeholder: "搜索" })`
+export const NavSearch = styled.input.attrs({ placeholder: "搜索" })`
   width: 160px;
   height: 38px;
   margin: 9px 0 0 20px;
@@ -55,14 +55,14 @@ const NavSearch = styled.input.attrs({ placeholder: "搜索" })`
   }
 `;
 
-const Addition = styled.div`
+export const Addition = styled.div`
   position: absolute;
   top: 0;
   right: 0;
   height: 56px;
 `;
 
-const Button = styled.div`
+export const Button = styled.div`
   display: inline-block;
   line-height: 38px;
   border-radius: 19px;
@@ -78,13 +78,3 @@ const Button = styled.div`
       background: #ec6149;
   }
 `;
-
-export const styles = {
-  HeaderWrapper,
-  Logo,
-  Nav,
-  NavItem,
-  NavSearch,
-  Addition,
-  Button
-};
