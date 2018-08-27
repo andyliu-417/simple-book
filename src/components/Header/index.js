@@ -9,6 +9,7 @@ import {
   Button
 } from "./style";
 import { connect } from "react-redux";
+import { actionCreators } from "./store";
 
 class Header extends Component {
   render() {
