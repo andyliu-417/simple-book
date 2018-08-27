@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import { styles } from "./style";
+import { connect } from "react-redux";
 
 class Header extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <styles.HeaderWrapper>
@@ -11,7 +15,7 @@ class Header extends Component {
           <styles.NavItem className="left">下载App</styles.NavItem>
           <styles.NavItem className="right">登录</styles.NavItem>
           <styles.NavItem className="right">Aa</styles.NavItem>
-          <styles.NavSearch/>
+          <styles.NavSearch />
         </styles.Nav>
         <styles.Addition>
           <styles.Button className="reg">注册</styles.Button>
@@ -22,4 +26,14 @@ class Header extends Component {
   }
 }
 
-export default Header;
+const mapStateToProps = state => {
+  return {};
+};
+
+const mapDispatchToProps = dispatch => {
+  return {};
+};
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Header);
