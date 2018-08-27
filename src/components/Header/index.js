@@ -12,6 +12,10 @@ import { connect } from "react-redux";
 import { actionCreators } from "./store";
 
 class Header extends Component {
+  componentDidMount() {
+    this.props._foo();
+  }
+  
   render() {
     return (
       <HeaderWrapper>
@@ -27,17 +31,24 @@ class Header extends Component {
           <Button className="reg">注册</Button>
           <Button className="writing">写文章</Button>
         </Addition>
+        <div>{this.props.foo}</div>
       </HeaderWrapper>
     );
   }
 }
 
 const mapStateToProps = state => {
-  return {};
+  return {
+    foo: state.header.foo
+  };
 };
 
 const mapDispatchToProps = dispatch => {
-  return {};
+  return {
+    _foo: () => {
+      dispatch(actionCreators.foo());
+    }
+  };
 };
 export default connect(
   mapStateToProps,
