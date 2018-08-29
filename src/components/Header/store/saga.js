@@ -1,24 +1,31 @@
-import { put, takeEvery } from 'redux-saga/effects';
+import { put, takeEvery, all } from "redux-saga/effects";
 import * as actionTypes from "./actionType";
 
-function* foo(action) {
-  try {
-    console.log('saga:', action.type);
-    yield put({
-      type: 'RESULT',
-      data: 'Saga Redux Demo'
-    });
-
-  } catch (e) {
-    console.log(e);
+const saga_handlers = {
+  [actionTypes.FOO]: function*(action) {
+    try {
+      console.log("saga:", action);
+      yield put({
+        type: "RESULT",
+        data: "Saga Redux Demo"
+      });
+    } catch (e) {
+      console.log(e);
+    }
   }
-}
+};
 
 function* saga() {
-  yield takeEvery(
-    action => action.type === actionTypes.FOO,
-    foo
-  );
+  yield all([
+    takeEvery(
+      action => {
+        return saga_handlers.hasOwnProperty(action.type) ? action.type : "";
+      },
+      action => {
+        return saga_handlers[action.type](action);
+      }
+    )
+  ]);
 }
 
 export default saga;
