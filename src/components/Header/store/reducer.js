@@ -7,11 +7,7 @@ const reducer_handlers = {
     console.log("reducer:", action.type);
     return state;
   },
-  ["RESULT"]: (state, action) => {
-    console.log("reducer:", action.type);
-    return {foo: action.data};
-    ;
-  }
+
 };
 
 export default (state = defaultState, action) => {
