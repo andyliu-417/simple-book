@@ -10,21 +10,9 @@ const reducer_handlers = {
 };
 
 export default (state = defaultState, action) => {
-  if (action.type) {
-    console.log(reducer_handlers);
-    console.log(reducer_handlers[action.type]);
-    console.log(action.type == actionTypes.FOO);
-
-    return reducer_handlers[actionTypes.FOO](state, action);
+  if (reducer_handlers.hasOwnProperty(action.type)) {
+    console.log("type: ", action.type);
+    return reducer_handlers[action.type](state, action);
   }
-  // switch (action.type) {
-  //   case actionTypes.FOO:
-  //     console.log("reducer:", action.type);
-  //     return state;
-  //   case "RESULT":
-  //     console.log("reducer:", action.type);
-  //     return {foo: action.data};
-  //   default:
-  //     return state;
-  // }
+  return state;
 };
