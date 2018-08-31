@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import {
   HeaderWrapper,
   Logo,
@@ -11,7 +11,7 @@ import {
 import { connect } from "react-redux";
 import { actionCreators, selectors } from "./store";
 
-class Header extends Component {
+class Header extends PureComponent {
   componentDidMount() {
     this.props._foo();
   }
