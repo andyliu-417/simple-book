@@ -1,13 +1,13 @@
 import * as actionTypes from "./actionType";
+import { fromJS } from "immutable";
 
-const defaultState = { foo: "foo" };
+const defaultState = fromJS({ foo: "foo" });
 
 const reducer_handlers = {
   [actionTypes.FOO]: (state, action) => {
     console.log("reducer:", action.type);
-    return state;
-  },
-
+    return state.set('foo', "new foo");
+  }
 };
 
 export default (state = defaultState, action) => {

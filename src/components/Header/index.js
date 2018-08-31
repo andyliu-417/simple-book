@@ -39,7 +39,7 @@ class Header extends Component {
 
 const mapStateToProps = state => {
   return {
-    foo: state.header.foo
+    foo: state.Header.get('foo')
   };
 };
 
