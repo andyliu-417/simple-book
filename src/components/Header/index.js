@@ -9,7 +9,7 @@ import {
   Button
 } from "./style";
 import { connect } from "react-redux";
-import { actionCreators } from "./store";
+import { actionCreators, selectors } from "./store";
 
 class Header extends Component {
   componentDidMount() {
@@ -39,7 +39,8 @@ class Header extends Component {
 
 const mapStateToProps = state => {
   return {
-    foo: state.getIn(['Header', 'foo'])
+    // foo: state.getIn(['Header', 'foo'])
+    foo: selectors.fooSelector(state)
   };
 };
 
