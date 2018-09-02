@@ -1,17 +1,13 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Header from "./components/Header";
 
 class Routes extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <Fragment>
-          <Header />
-          {/* <Switch> */}
-          {/* <Route path="/" component={Header} /> */}
-          {/* </Switch> */}
-        </Fragment>
+        <Switch>
+          <Route exac path="/" component={Home} />
+        </Switch>
       </BrowserRouter>
     );
   }
