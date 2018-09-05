@@ -31,7 +31,7 @@ class Header extends PureComponent {
           <Button className="reg">注册</Button>
           <Button className="writing">写文章</Button>
         </Addition>
-        <div>{this.props.foo}</div>
+        {/* <div>{this.props.foo}</div> */}
       </HeaderWrapper>
     );
   }
