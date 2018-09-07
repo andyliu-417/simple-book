@@ -1,4 +1,6 @@
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
+import { CSSTransition } from "react-transition-group";
+
 import {
   HeaderWrapper,
   Logo,
@@ -11,11 +13,25 @@ import {
 import { connect } from "react-redux";
 import { actionCreators, selectors } from "./store";
 
-class Header extends PureComponent {
+class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { focused: false };
+    this.handleToggle = this.handleToggle.bind(this);
+  }
+
+  handleToggle() {
+    this.setState(preState => {
+      return {
+        focused: !preState.focused
+      };
+    });
+  }
+
   componentDidMount() {
     this.props._foo();
   }
-  
+
   render() {
     return (
       <HeaderWrapper>
@@ -25,7 +41,13 @@ class Header extends PureComponent {
           <NavItem className="left">下载App</NavItem>
           <NavItem className="right">登录</NavItem>
           <NavItem className="right">Aa</NavItem>
-          <NavSearch />
+          <CSSTransition in={this.state.focused} timeout={200} classNames="slide">
+            <NavSearch
+              className={this.state.focused ? "focused" : ""}
+              onFocus={this.handleToggle}
+              onBlur={this.handleToggle}
+            />
+          </CSSTransition>
         </Nav>
         <Addition>
           <Button className="reg">注册</Button>

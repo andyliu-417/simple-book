@@ -47,11 +47,28 @@ export const NavSearch = styled.input.attrs({ placeholder: "搜索" })`
   margin: 9px 0 0 20px;
   padding: 0 20px;
   border: none;
+  outline: none;
   border-radius: 19px;
   background: #eee;
   font-size: 14px;
+  color: #666;
   &::placeholder {
     color: #999;
+  }
+  &.focused {
+    width: 240px;
+  }
+  &.slide-enter {
+    transition: all 0.2s ease-out;
+  }
+  &.slide-enter-active {
+    width: 240px;
+  }
+  &.slide-exit {
+    transition: all 0.2s ease-out;
+  }
+  &.slide-exit-active {
+    width: 160px;
   }
 `;
 
@@ -66,15 +83,15 @@ export const Button = styled.div`
   display: inline-block;
   line-height: 38px;
   border-radius: 19px;
-  border:1px solid #ec6149;
+  border: 1px solid #ec6149;
   margin: 9px 20px 9px 0;
   padding: 0 20px;
   font-size: 14px;
   &.reg {
-      color: #ec6149;
+    color: #ec6149;
   }
   &.writing {
-      color: #fff;
-      background: #ec6149;
+    color: #fff;
+    background: #ec6149;
   }
 `;
