@@ -4,7 +4,6 @@ import * as actionTypes from "./actionType";
 const saga_handlers = {
   [actionTypes.FOO]: function*(action) {
     try {
-      console.log("saga:", action);
       yield put({
         type: "RESULT",
         data: "Saga Redux Demo"
@@ -22,6 +21,7 @@ function* saga() {
         return saga_handlers.hasOwnProperty(action.type) ? action.type : "";
       },
       action => {
+        console.log("saga", action);
         return saga_handlers[action.type](action);
       }
     )

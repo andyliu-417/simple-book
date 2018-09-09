@@ -1,1 +1,2 @@
-export const FOO = "header_rfoo";
+export const FOO = "header_foo";
+export const FOCUSED = "header_focused";

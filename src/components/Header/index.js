@@ -14,25 +14,8 @@ import { connect } from "react-redux";
 import { actionCreators, selectors } from "./store";
 
 class Header extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { focused: false };
-    this.handleToggle = this.handleToggle.bind(this);
-  }
-
-  handleToggle() {
-    this.setState(preState => {
-      return {
-        focused: !preState.focused
-      };
-    });
-  }
-
-  componentDidMount() {
-    this.props._foo();
-  }
-
   render() {
+    const { focused, toggleFocused } = this.props;
     return (
       <HeaderWrapper>
         <Logo />
@@ -41,11 +24,15 @@ class Header extends Component {
           <NavItem className="left">下载App</NavItem>
           <NavItem className="right">登录</NavItem>
           <NavItem className="right">Aa</NavItem>
-          <CSSTransition in={this.state.focused} timeout={200} classNames="slide">
+          <CSSTransition in={focused} timeout={200} classNames="slide">
             <NavSearch
-              className={this.state.focused ? "focused" : ""}
-              onFocus={this.handleToggle}
-              onBlur={this.handleToggle}
+              className={focused ? "focused" : ""}
+              onFocus={() => {
+                toggleFocused(!focused);
+              }}
+              onBlur={() => {
+                toggleFocused(!focused);
+              }}
             />
           </CSSTransition>
         </Nav>
@@ -53,7 +40,6 @@ class Header extends Component {
           <Button className="reg">注册</Button>
           <Button className="writing">写文章</Button>
         </Addition>
-        {/* <div>{this.props.foo}</div> */}
       </HeaderWrapper>
     );
   }
@@ -61,15 +47,14 @@ class Header extends Component {
 
 const mapStateToProps = state => {
   return {
-    // foo: state.getIn(['Header', 'foo'])
-    foo: selectors.fooSelector(state)
+    focused: selectors.focusedSelector(state)
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    _foo: () => {
-      dispatch(actionCreators.foo());
+    toggleFocused: data => {
+      dispatch(actionCreators.focused(data));
     }
   };
 };
