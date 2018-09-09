@@ -2,14 +2,10 @@ import * as actionTypes from "./actionType";
 import { fromJS } from "immutable";
 
 const defaultState = fromJS({
-  foo: "foo",
   focused: false
 });
 
 const reducer_handlers = {
-  [actionTypes.FOO]: (state, action) => {
-    return state.set("foo", "new foo");
-  },
   [actionTypes.FOCUSED]: (state, action) => {
     return state.set("focused", action.data);
   }
