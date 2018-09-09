@@ -5,22 +5,24 @@ import { TopicWrapper, TopicItem } from "./style";
 
 class Topic extends PureComponent {
   render() {
+    const { topicList } = this.props;
     return (
       <TopicWrapper>
-        <TopicItem>
-          <img
-            className="topic-pic"
-            src="//upload.jianshu.io/collections/images/95/1.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/64/h/64"
-          />
-          社会热点
-        </TopicItem>
+        {topicList.map(item => (
+          <TopicItem key={item.get("id")}>
+            <img className="topic-pic" src={item.get("imgUrl")} />
+            {item.get("title")}
+          </TopicItem>
+        ))}
       </TopicWrapper>
     );
   }
 }
 
 const mapStateToProps = state => {
-  return {};
+  return {
+    topicList: selectors.topicListSelector(state)
+  };
 };
 
 const mapDispatchToProps = dispatch => {

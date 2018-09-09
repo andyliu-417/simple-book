@@ -1,5 +1,5 @@
 import { createSelector } from "reselect";
 
-// const selectFoo = state => state.getIn(['Home', 'foo']);
-// export const fooSelector = createSelector(selectFoo, item => item);
+const selectTopicList = state => state.getIn(['Home', 'topicList']);
+export const topicListSelector = createSelector(selectTopicList, item => item);
 
