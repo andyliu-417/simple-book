@@ -8,6 +8,7 @@ export const HomeWrapper = styled.div`
 
 export const HomeLeft = styled.div`
   float: left;
+  margin-left: 15px;
   margin: 30px 15px;
   width: 65%;
   .banner-img {
@@ -26,6 +27,7 @@ export const TopicWrapper = styled.div`
   overflow: hidden;
   padding: 20px 0 10px 0;
   margin-left: -18px;
+  border-bottom: 1px solid #dcdcdc;
 `;
 
 export const TopicItem = styled.div`
@@ -45,5 +47,42 @@ export const TopicItem = styled.div`
     width: 40px;
     height: 32px;
     margin-right: 10px;
+  }
+`;
+
+export const ListWrapper = styled.div``;
+
+export const ListItem = styled.div`
+  overflow: hidden;
+  padding: 20px 0;
+  border-bottom: 1px solid #dcdcdc;
+
+  .left {
+    float: left;
+    width: 800px;
+    .title {
+      line-height: 24px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+    .content {
+      font-size: 13px;
+      color: #999;
+      line-height: 24px;
+    }
+  }
+
+  .list-pic {
+    float: right;
+    width: 125px;
+    height: 100px;
+  }
+`;
+
+export const ListInfo = styled.div`
+  overflow: hidden;
+  div {
+    float: left;
   }
 `;
