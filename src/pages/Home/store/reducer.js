@@ -21,19 +21,19 @@ const defaultState = fromJS({
       imgUrl:
         "//upload.jianshu.io/collections/images/21/20120316041115481.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/64/h/64"
     }
-  ]
+  ],
+  users: []
 });
 
 const reducer_handlers = {
-  // [actionTypes.FOO]: (state, action) => {
-  //   console.log("reducer:", action.type);
-  //   return state.set("key", val);
-  // }
+  ["users"]: (state, action) => {
+    return state.set("users", action.data);
+  }
 };
 
 export default (state = defaultState, action) => {
   if (reducer_handlers.hasOwnProperty(action.type)) {
-    console.log("action type: ", action.type);
+    console.log("reducer", action);
     return reducer_handlers[action.type](state, action);
   }
   return state;

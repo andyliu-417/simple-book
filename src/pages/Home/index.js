@@ -9,6 +9,10 @@ import Recommend from "./Recommend";
 import Topic from "./Topic";
 
 class Home extends PureComponent {
+  componentDidMount() {
+    this.props.testFetch();
+  }
+
   render() {
     return (
       <Fragment>
@@ -37,7 +41,11 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return {};
+  return {
+    testFetch: () => {
+      dispatch({ type: "test_fetch" });
+    }
+  };
 };
 
 export default connect(
