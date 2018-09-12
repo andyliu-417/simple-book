@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./style.js";
+import "./statics/iconfont/iconfont";
+import "font-awesome/css/font-awesome.min.css";
 
 import Routes from "./routes";
 import { Provider } from "react-redux";

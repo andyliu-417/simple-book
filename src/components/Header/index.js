@@ -37,7 +37,10 @@ const Header = props => {
       </Nav>
       <Addition>
         <Button className="reg">注册</Button>
-        <Button className="writing">写文章</Button>
+        <Button className="writing">
+          {/* <i className="iconfont">&#xe61b;</i> */}
+          写文章
+        </Button>
       </Addition>
     </HeaderWrapper>
   );

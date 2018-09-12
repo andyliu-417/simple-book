@@ -2,6 +2,7 @@ import React, { PureComponent } from "react";
 import { connect } from "react-redux";
 import { actionCreators, selectors } from "./store";
 import { ListWrapper, ListItem, ListInfo } from "./style";
+import FontAwesome from "react-fontawesome";
 
 class List extends PureComponent {
   render() {
@@ -19,9 +20,11 @@ class List extends PureComponent {
             <ListInfo>
               <div className="author">asdasdfsadf</div>
               <div className="msg">
+                <FontAwesome name="comment" />
+                &nbsp;
+                <span>msg</span>
               </div>
-              <div className="favor">
-              </div>
+              <div className="favor" />
             </ListInfo>
           </div>
           <img
