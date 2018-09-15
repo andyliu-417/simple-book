@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import { connect } from "react-redux";
 import { actionCreators, selectors } from "./store";
-import { ListWrapper, ListItem, ListInfo } from "./style";
+import { ListWrapper, ListItem, ListInfo, ListLoadMore } from "./style";
 import FontAwesome from "react-fontawesome";
 
 class List extends PureComponent {
@@ -31,12 +31,10 @@ class List extends PureComponent {
                 </div>
               </ListInfo>
             </div>
-            <img
-              className="list-pic"
-              src={item.get("pic_url")}
-            />
+            <img className="list-pic" src={item.get("pic_url")} />
           </ListItem>
         ))}
+        <ListLoadMore onClick={this.props.loadMore}>阅读更多</ListLoadMore>
       </ListWrapper>
     );
   }
@@ -49,7 +47,11 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return {};
+  return {
+    loadMore: () => {
+      dispatch({ type: "load_more" });
+    }
+  };
 };
 
 export default connect(

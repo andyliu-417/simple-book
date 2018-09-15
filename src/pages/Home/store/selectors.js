@@ -9,3 +9,6 @@ export const articleListSelector = createSelector(selectArticleList, item => ite
 const selectRecommendList = state => state.getIn(['Home', 'recommendList']);
 export const recommendListSelector = createSelector(selectRecommendList, item => item);
 
+const selectShowTop = state => state.getIn(['Home', 'showTop']);
+export const showTopSelector = createSelector(selectShowTop, item => item);
+

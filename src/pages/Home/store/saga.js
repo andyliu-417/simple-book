@@ -10,6 +10,13 @@ const saga_handlers = {
     } catch (e) {
       console.log(e);
     }
+  },
+  ["load_more"]: function*(action) {
+    try {
+      yield put({ type: "more_article" });
+    } catch (e) {
+      console.log(e);
+    }
   }
 };
 

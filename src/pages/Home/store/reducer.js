@@ -102,12 +102,26 @@ const defaultState = fromJS({
         "//cdn2.jianshu.io/assets/web/banner-s-6-c4d6335bfd688f2ca1115b42b04c28a7.png"
     }
   ],
+  showTop: false,
   users: []
 });
+
+const change_show_top_handler = (state, action) => {
+  return state.set("showTop", action.show);
+};
 
 const reducer_handlers = {
   ["users"]: (state, action) => {
     return state.set("users", action.data);
+  },
+  ["more_article"]: (state, action) => {
+    return state.set(
+      "articleList",
+      state.get("articleList").concat(state.get("articleList"))
+    );
+  },
+  ["change_show_top"]: (state, action) => {
+    return change_show_top_handler(state, action);
   }
 };
 

@@ -113,3 +113,28 @@ export const RecommendItem = styled.a.attrs({ target: "_blank" })`
   }
   margin-bottom: 10px;
 `;
+
+export const ListLoadMore = styled.div`
+  margin: 30px auto 60px;
+  padding: 10px 15px;
+  background-color: #a5a5a5;
+  color: #fff;
+  text-align: center;
+  border-radius: 20px;
+  font-size: 15px;
+  cursor: pointer;
+`;
+
+export const HomeBacktop = styled.div`
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  right: 3%;
+  bottom: 5%;
+  border: 1px solid #ccc;
+  text-align: center;
+  line-height: 60px;
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+`;

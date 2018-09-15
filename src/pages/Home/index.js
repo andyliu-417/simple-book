@@ -2,7 +2,7 @@ import React, { PureComponent, Fragment } from "react";
 import { connect } from "react-redux";
 import { actionCreators, selectors } from "./store";
 import { Header } from "../../components";
-import { HomeWrapper, HomeLeft, HomeRight } from "./style";
+import { HomeWrapper, HomeLeft, HomeRight, HomeBacktop } from "./style";
 import Writer from "./Writer";
 import List from "./List";
 import Recommend from "./Recommend";
@@ -11,6 +11,25 @@ import Topic from "./Topic";
 class Home extends PureComponent {
   componentDidMount() {
     this.props.testFetch();
+    this.bindEvent();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.scrollListener);
+  }
+
+  bindEvent() {
+    window.addEventListener("scroll", this.scrollListener);
+  }
+
+  scrollListener = () => {
+    const { changeShowTop, showTop } = this.props;
+    let flag = document.documentElement.scrollTop > 350;
+    showTop !== flag && changeShowTop(flag);
+  };
+
+  backTop() {
+    window.scrollTo(0, 0);
   }
 
   render() {
@@ -31,6 +50,9 @@ class Home extends PureComponent {
             <Recommend />
           </HomeRight>
         </HomeWrapper>
+        {this.props.showTop ? (
+          <HomeBacktop onClick={this.backTop}>Top</HomeBacktop>
+        ) : null}
       </Fragment>
     );
   }
@@ -38,7 +60,7 @@ class Home extends PureComponent {
 
 const mapStateToProps = state => {
   return {
-    // foo: selectors.fooSelector(state)
+    showTop: selectors.showTopSelector(state)
   };
 };
 
@@ -46,6 +68,9 @@ const mapDispatchToProps = dispatch => {
   return {
     testFetch: () => {
       dispatch({ type: "test_fetch" });
+    },
+    changeShowTop: flag => {
+      dispatch({ type: "change_show_top", show: flag });
     }
   };
 };
