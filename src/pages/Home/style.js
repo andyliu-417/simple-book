@@ -25,9 +25,9 @@ export const HomeRight = styled.div`
 
 export const TopicWrapper = styled.div`
   overflow: hidden;
-  padding: 20px 0 10px 0;
+  padding: 20px 0 0 0;
   margin-left: -18px;
-  border-bottom: 1px solid #dcdcdc;
+  // border-bottom: 1px solid #dcdcdc;
 `;
 
 export const TopicItem = styled.div`
@@ -61,15 +61,15 @@ export const ListItem = styled.div`
     float: left;
     width: 800px;
     .title {
-      line-height: 24px;
-      font-size: 18px;
+      line-height: 22px;
+      font-size: 22px;
       font-weight: bold;
       color: #333;
     }
     .content {
-      font-size: 13px;
+      font-size: 18px;
       color: #999;
-      line-height: 24px;
+      line-height: 20px;
     }
   }
 
@@ -82,7 +82,10 @@ export const ListItem = styled.div`
 
 export const ListInfo = styled.div`
   overflow: hidden;
-  div {
+  margin-top: 20px;
+  .info {
     float: left;
+    margin-right: 20px;
+    color: #999;
   }
 `;

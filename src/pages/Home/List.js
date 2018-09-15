@@ -11,20 +11,86 @@ class List extends PureComponent {
         <ListItem>
           <div className="left">
             <div className="title">this is title</div>
-            <div className="paragraph">
+            <div className="content">
               this is contents this is contents this is contents this is
               contents this is contents this is contents this is contents this
               is contents this is contents this is contents this is contents
               this is contents
             </div>
             <ListInfo>
-              <div className="author">asdasdfsadf</div>
-              <div className="msg">
+              <div className="info">
+                <span>asdasdfsadf</span>
+              </div>
+              <div className="info">
                 <FontAwesome name="comment" />
                 &nbsp;
-                <span>msg</span>
+                <span>18</span>
               </div>
-              <div className="favor" />
+              <div className="info">
+                <FontAwesome name="heart" />
+                &nbsp;
+                <span>10</span>
+              </div>
+            </ListInfo>
+          </div>
+          <img
+            className="list-pic"
+            src="//upload-images.jianshu.io/upload_images/5143640-9b6bba456fd0c255?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240"
+          />
+        </ListItem>
+        <ListItem>
+          <div className="left">
+            <div className="title">this is title</div>
+            <div className="content">
+              this is contents this is contents this is contents this is
+              contents this is contents this is contents this is contents this
+              is contents this is contents this is contents this is contents
+              this is contents
+            </div>
+            <ListInfo>
+              <div className="info">
+                <span>asdasdfsadf</span>
+              </div>
+              <div className="info">
+                <FontAwesome name="comment" />
+                &nbsp;
+                <span>18</span>
+              </div>
+              <div className="info">
+                <FontAwesome name="heart" />
+                &nbsp;
+                <span>10</span>
+              </div>
+            </ListInfo>
+          </div>
+          <img
+            className="list-pic"
+            src="//upload-images.jianshu.io/upload_images/5143640-9b6bba456fd0c255?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240"
+          />
+        </ListItem>
+        <ListItem>
+          <div className="left">
+            <div className="title">this is title</div>
+            <div className="content">
+              this is contents this is contents this is contents this is
+              contents this is contents this is contents this is contents this
+              is contents this is contents this is contents this is contents
+              this is contents
+            </div>
+            <ListInfo>
+              <div className="info">
+                <span>asdasdfsadf</span>
+              </div>
+              <div className="info">
+                <FontAwesome name="comment" />
+                &nbsp;
+                <span>18</span>
+              </div>
+              <div className="info">
+                <FontAwesome name="heart" />
+                &nbsp;
+                <span>10</span>
+              </div>
             </ListInfo>
           </div>
           <img
