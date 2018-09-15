@@ -12,16 +12,28 @@ import {
 } from "./style";
 import { connect } from "react-redux";
 import { actionCreators, selectors } from "./store";
+import { Link } from "react-router-dom";
 
 const Header = props => {
-  const { focused, toggleFocused } = props;
+  const { focused, toggleFocused, login } = props;
   return (
     <HeaderWrapper>
-      <Logo />
+      <Link to="/">
+        <Logo />
+      </Link>
+
       <Nav>
         <NavItem className="left active">首页</NavItem>
         <NavItem className="left">下载App</NavItem>
-        <NavItem className="right">登录</NavItem>
+        {login ? (
+          <Link to="">
+            <NavItem className="right">退出</NavItem>
+          </Link>
+        ) : (
+          <Link to="/login">
+            <NavItem className="right">登录</NavItem>
+          </Link>
+        )}
         <NavItem className="right">Aa</NavItem>
         <CSSTransition in={focused} timeout={200} classNames="slide">
           <NavSearch
@@ -48,7 +60,8 @@ const Header = props => {
 
 const mapStateToProps = state => {
   return {
-    focused: selectors.focusedSelector(state)
+    focused: selectors.focusedSelector(state),
+    login: state.getIn(["Login", "login"])
   };
 };
 

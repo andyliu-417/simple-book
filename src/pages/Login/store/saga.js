@@ -2,13 +2,14 @@ import { put, takeEvery, all, call } from "redux-saga/effects";
 import * as actionTypes from "./actionType";
 
 const saga_handlers = {
-  // [actionTypes.FOO]: function*(action) {
-  //   try {
-  //     yield put({});
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // }
+  ["login"]: function*(action) {
+    try {
+      console.log(action.payload);
+      // yield put({});
+    } catch (e) {
+      console.log(e);
+    }
+  }
 };
 
 function* saga() {
@@ -26,4 +27,3 @@ function* saga() {
 }
 
 export default saga;
-

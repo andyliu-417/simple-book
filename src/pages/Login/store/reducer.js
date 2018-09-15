@@ -2,7 +2,7 @@ import * as actionTypes from "./actionType";
 import { fromJS } from "immutable";
 
 const defaultState = fromJS({
-  // foo: "foo",
+  login: false
 });
 
 const reducer_handlers = {
