@@ -10,7 +10,7 @@ export const HeaderWrapper = styled.div`
 export const Logo = styled.a`
   position: absolute;
   top: 0;
-  left: 0;
+  left: 12%;
   display: inline-block;
   height: 56px;
   width: 100px;
@@ -19,7 +19,7 @@ export const Logo = styled.a`
 `;
 
 export const Nav = styled.div`
-  width: 70%;
+  width: 55%;
   height: 100%;
   margin: 0 auto;
 `;
@@ -75,7 +75,7 @@ export const NavSearch = styled.input.attrs({ placeholder: "搜索" })`
 export const Addition = styled.div`
   position: absolute;
   top: 0;
-  right: 0;
+  right: 12%;
   height: 56px;
 `;
 
