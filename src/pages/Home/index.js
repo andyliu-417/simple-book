@@ -27,7 +27,9 @@ class Home extends PureComponent {
             <Topic />
             <List />
           </HomeLeft>
-          <HomeRight />
+          <HomeRight>
+            <Recommend />
+          </HomeRight>
         </HomeWrapper>
       </Fragment>
     );

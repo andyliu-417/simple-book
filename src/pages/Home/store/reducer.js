@@ -22,7 +22,6 @@ const defaultState = fromJS({
         "//upload.jianshu.io/collections/images/21/20120316041115481.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/64/h/64"
     }
   ],
-  users: [],
   articleList: [
     {
       id: 1,
@@ -68,7 +67,42 @@ const defaultState = fromJS({
       pic_url:
         "//upload-images.jianshu.io/upload_images/5143640-9b6bba456fd0c255?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240"
     }
-  ]
+  ],
+  recommendList: [
+    {
+      id: 1,
+      href_url: "/trending/weekly?utm_medium=index-banner-s&utm_source=desktop",
+      img_url:
+        "//cdn2.jianshu.io/assets/web/banner-s-3-7123fd94750759acf7eca05b871e9d17.png"
+    },
+    {
+      id: 2,
+      href_url:
+        "/trending/monthly?utm_medium=index-banner-s&amp;utm_source=desktop",
+      img_url:
+        "//cdn2.jianshu.io/assets/web/banner-s-4-b70da70d679593510ac93a172dfbaeaa.png"
+    },
+    {
+      id: 3,
+      href_url: "/mobile/books?category_id=284",
+      img_url:
+        "//cdn2.jianshu.io/assets/web/banner-s-7-1a0222c91694a1f38e610be4bf9669be.png"
+    },
+    {
+      id: 4,
+      href_url: "/publications",
+      img_url:
+        "//cdn2.jianshu.io/assets/web/banner-s-5-4ba25cf5041931a0ed2062828b4064cb.png"
+    },
+    {
+      id: 5,
+      href_url:
+        "/c/e048f1a72e3d?utm_medium=index-banner-s&amp;utm_source=desktop",
+      img_url:
+        "//cdn2.jianshu.io/assets/web/banner-s-6-c4d6335bfd688f2ca1115b42b04c28a7.png"
+    }
+  ],
+  users: []
 });
 
 const reducer_handlers = {

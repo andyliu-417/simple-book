@@ -2,14 +2,13 @@ import styled from "styled-components";
 
 export const HomeWrapper = styled.div`
   overflow: hidden;
-  width: 75%;
+  width: 55%;
   margin: 0 auto;
 `;
 
 export const HomeLeft = styled.div`
   float: left;
-  margin-left: 15px;
-  margin: 30px 15px;
+  margin: 30px 10px;
   width: 65%;
   .banner-img {
     width: 100%;
@@ -19,7 +18,7 @@ export const HomeLeft = styled.div`
 
 export const HomeRight = styled.div`
   float: right;
-  margin: 30px 15px;
+  margin: 30px 10px;
   width: 30%;
 `;
 
@@ -58,7 +57,7 @@ export const ListItem = styled.div`
 
   .left {
     float: left;
-    width: 800px;
+    width: 80%;
     .title {
       line-height: 22px;
       font-size: 22px;
@@ -67,9 +66,20 @@ export const ListItem = styled.div`
       margin-bottom: 12px;
     }
     .content {
+      position: relative;
+      line-height: 1.4em;
+      height: 4.2em;
+      overflow: hidden;
       font-size: 15px;
       color: #999;
-      line-height: 24px;
+      &:after {
+        content: "...";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 0 5px;
+        background: #fff;
+      }
     }
   }
 
@@ -82,10 +92,24 @@ export const ListItem = styled.div`
 
 export const ListInfo = styled.div`
   overflow: hidden;
-  // margin-top: 20px;
+  margin-top: 10px;
   .info {
     float: left;
     margin-right: 20px;
     color: #999;
   }
+`;
+
+export const RecommendWrapper = styled.div`
+  height: 300px;
+`;
+
+export const RecommendItem = styled.a.attrs({ target: "_blank" })`
+  display: inline-block;
+  height: 50px;
+  .item-pic {
+    height: 50px;
+    width: 100%;
+  }
+  margin-bottom: 10px;
 `;
