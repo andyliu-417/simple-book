@@ -134,6 +134,7 @@ export const HomeBacktop = styled.div`
   right: 3%;
   bottom: 5%;
   border: 1px solid #ccc;
+  border-radius: 60px;
   text-align: center;
   line-height: 60px;
   font-size: 20px;

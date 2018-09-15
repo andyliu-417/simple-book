@@ -1,11 +1,13 @@
 import { fork, all } from "redux-saga/effects";
-import { saga as HeaderSaga } from "../components/Header/store"
 import { saga as HomeSaga } from "../pages/Home/store"
+import { saga as DetailSaga } from "../pages/Detail/store"
+import { saga as HeaderSaga } from "../components/Header/store"
 
 function* rootSaga(config) {
   yield all([
-    fork(HeaderSaga),
     fork(HomeSaga),
+    fork(DetailSaga),
+    fork(HeaderSaga),
   ]);
 }
 

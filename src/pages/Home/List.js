@@ -15,7 +15,9 @@ class List extends PureComponent {
           <ListItem key={item.get("id")}>
             <div className="left">
               <div className="title">
-                <Link to='/detail'>{item.get("title")}</Link>
+                <Link to={"/detail/" + item.get("id")}>
+                  {item.get("title")}
+                </Link>
               </div>
               <div className="content">{item.get("content")}</div>
               <ListInfo>
