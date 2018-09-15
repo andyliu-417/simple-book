@@ -1,24 +1,21 @@
 import React, { PureComponent, Fragment } from "react";
 import { connect } from "react-redux";
 import { actionCreators, selectors } from "./store";
-import {} from "./style";
+import { LoginWrapper, LoginBox, Input, Button } from "./style";
 import { Header } from "../../components";
 
-class Detail extends PureComponent {
-  componentDidMount() {
-    console.log(this.getParams("id"));
-    // request data with this.id
-  }
-
-  getParams = name => {
-    return this.props.match.params[name];
-  };
-
+class Login extends PureComponent {
   render() {
     return (
       <Fragment>
         <Header />
-        <div>Detail {this.getParams("id")}</div>
+        <LoginWrapper>
+          <LoginBox>
+            <Input placeholder="账号" />
+            <Input placeholder="密码" type="password" />
+            <Button>登陆</Button>
+          </LoginBox>
+        </LoginWrapper>
       </Fragment>
     );
   }
@@ -35,4 +32,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Detail);
+)(Login);
