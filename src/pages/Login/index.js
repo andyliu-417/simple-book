@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { actionCreators, selectors } from "./store";
 import { LoginWrapper, LoginBox, Input, Button } from "./style";
 import { Header } from "../../components";
+import { Redirect } from "react-router-dom";
 
 class Login extends Component {
   constructor(props) {
@@ -27,7 +28,8 @@ class Login extends Component {
   };
 
   render() {
-    return (
+    const { loginState } = this.props;
+    return !loginState ? (
       <Fragment>
         <Header />
         <LoginWrapper>
@@ -49,12 +51,16 @@ class Login extends Component {
           </LoginBox>
         </LoginWrapper>
       </Fragment>
+    ) : (
+      <Redirect to="/" />
     );
   }
 }
 
 const mapStateToProps = state => {
-  return {};
+  return {
+    loginState: state.getIn(["Login", "login"])
+  };
 };
 
 const mapDispatchToProps = dispatch => {
