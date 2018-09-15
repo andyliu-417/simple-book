@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { actionCreators, selectors } from "./store";
 import { ListWrapper, ListItem, ListInfo, ListLoadMore } from "./style";
 import FontAwesome from "react-fontawesome";
+import { Link } from "react-router-dom";
 
 class List extends PureComponent {
   render() {
@@ -13,7 +14,9 @@ class List extends PureComponent {
         {articleList.map(item => (
           <ListItem key={item.get("id")}>
             <div className="left">
-              <div className="title">{item.get("title")}</div>
+              <div className="title">
+                <Link to='/detail'>{item.get("title")}</Link>
+              </div>
               <div className="content">{item.get("content")}</div>
               <ListInfo>
                 <div className="info">

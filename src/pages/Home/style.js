@@ -62,8 +62,10 @@ export const ListItem = styled.div`
       line-height: 22px;
       font-size: 22px;
       font-weight: bold;
-      color: #333;
       margin-bottom: 12px;
+      a {
+        color: #333;
+      }
     }
     .content {
       position: relative;
